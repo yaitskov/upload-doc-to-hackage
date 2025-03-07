@@ -21,7 +21,7 @@ fi
 while [ $# -ne 0 ] ; do
     case "$1" in
         -h|--help) cat<<EOF
-Usage: hackage-upload.sh [ -u <user> ] [ -p <password-file> ]
+Usage: hackage-upload.sh [ options ]
 
 The script uploads cabal package docs to hackage.
 Run the script in the root project folder with cabal file.
@@ -30,6 +30,13 @@ then doc archive is generated.
 
 User and Password can be set via HACKAGE_USER and HACKAGE_PASS
 environment variables correspondently.
+HACKAGE_PASS default is ~/.hackage-pass
+
+Options:
+  -u <user>
+  -p <password-file>
+  -v                   verbose
+  -d                   dry run
 EOF
                    exit 1;;
         -v) set -x ;;
