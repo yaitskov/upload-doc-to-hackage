@@ -1,8 +1,9 @@
 {
   lib,
-  stdenv,
-  makeWrapper,
   curl,
+  cabal-install,
+  stdenv,
+  makeWrapper
 }: let
   inherit (lib) makeBinPath;
 in
@@ -11,7 +12,7 @@ in
     version = "0.1";
     src = ./upload-doc-to-hackage.sh;
     nativeBuildInputs = [makeWrapper];
-    buildInputs = [curl];
+    buildInputs = [curl cabal-install];
     unpackCmd = ''
       mkdir test-src
       cp $curSrc test-src/upload-doc-to-hackage.sh
