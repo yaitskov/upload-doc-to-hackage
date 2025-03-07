@@ -1,6 +1,7 @@
 {
   lib,
   curl,
+  which,
   cabal-install,
   stdenv,
   makeWrapper
@@ -12,7 +13,7 @@ in
     version = "0.1";
     src = ./upload-doc-to-hackage.sh;
     nativeBuildInputs = [makeWrapper];
-    buildInputs = [curl cabal-install];
+    buildInputs = [curl cabal-install which];
     unpackCmd = ''
       mkdir test-src
       cp $curSrc test-src/upload-doc-to-hackage.sh
