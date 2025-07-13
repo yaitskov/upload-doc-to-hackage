@@ -94,4 +94,5 @@ if [ -n "$DRY_RUN" ] ; then
             https://hackage.haskell.org/package/$PACK_NV/docs
 fi
 
+echo -e "\n-----------------------------------------"
 echo Docs have been uploaded.
